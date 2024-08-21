@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+@font-face {
+    font-family: 'Brittany';
+    src: url('../fonts/BrittanySignature.ttf') format('truetype');
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../imgs/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat';
+}
+
+header .avatar {
+    margin-left: 20%;
+}
+
+header .avatar img {
+    width: 140px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+header .title .row > * {
+    width: fit-content !important;
+    height: fit-content;
+    font-size: 20px;
+}
+
+header .title .first-text {
+    height: 160px;
+    line-height: 140px;
+}
+
+header .title .second-text {
+    height: 180px;
+    display: flex;
+    align-items: end;
+}
+
+header .title .number {
+    color: #1d5703;
+    font-size: 80px;
+    font-weight: 400;
+    width: fit-content;
+    line-height: 100px;
+}
+
+header .title .number .day {
+    border-bottom: 1px solid #ccc;
+}
+
+header .frontground {
+    width: 767px;
+    max-width: 100%;
+    aspect-ratio: 5/3;
+    margin: 0 auto;
+    position: relative;
+}
+
+header .frontground img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+header .frontground .wedding-title {
+    position: absolute;
+    top: calc(100% - 48px);
+    left: 42px;
+    font-size: 100px;
+    line-height: 100px;
+    font-family: 'Brittany';
+    font-weight: 400;
+    transform: rotate(-3deg);
+    z-index: 10;
+}
+
+header .frontground .wedding-member {
+    position: absolute;
+    top: calc(100% + 76px);
+    left: 30px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+main .calendar-title {
+    font-size: 52px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: "Alex Brush", cursive;
+    width: 100%;
+    text-align: center;
+    margin-top: 260px;
+}
+
+main .countdown {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+main .countdown .time {
+    text-align: center;
+    width: 25%;
+    min-width: 60px;
+    max-width: 160px;
+    color: #2E7D32;
+}
+
+main .countdown .time span {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+main .countdown .label {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: right;
+    color: #c1c1c1;
+    padding-right: 16px;
+    font-size: 12px;
+}
+
+.copyright a {
+    color: #888;
+    text-decoration: none;
+}

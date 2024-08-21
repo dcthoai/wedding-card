@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@300;400&display=swap");
+
+.calendar {
+    position: relative;
+    background-color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    max-width: 767px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.calendar .header {
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calendar .header_title {
+    font-family: "Kaushan Script", cursive;
+    font-size: 28px;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: #919191;
+}
+
+.calendar .header_subtitle {
+    font-size: 14px;
+    color: #919191;
+}
+
+.calendar .days-of-week {
+    width: 100%;
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+.calendar .days-of-week .day-name {
+    color: #919191;
+    font-weight: 700;
+    font-size: 12px;
+    text-wrap: nowrap;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.calendar .days .day-number {
+    width: 100%;
+}
+
+.calendar .days .day-number div {
+    color: #8d8d8d;
+    width: 32px;
+    aspect-ratio: 1/1;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.calendar .days .day-number.active div {
+    background-color: #726e6e;
+    border: none;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.calendar .days .day-number.active:hover div {
+    background-color: #726e6e;
+}
+
+.calendar .days .day-number:hover div {
+    transform: scale(1.2);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.calendar .days .day-number_disabled {
+    pointer-events: none;
+    color: #c1c1c1;
+}

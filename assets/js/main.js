@@ -1,0 +1,38 @@
+// Function to format numbers to always be two digits
+function formatNumber(number) {
+    return number < 10 ? '0' + number : number;
+}
+
+// Set the date we're counting down to
+const countDownDate = new Date("Sep 8, 2024 10:00:00").getTime();
+
+// Update the countdown every 1 second
+let x = setInterval(function() {
+
+    // Get today's date and time
+    const now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    const distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the respective elements with two-digit format
+    document.getElementById("days").innerHTML = formatNumber(days);
+    document.getElementById("hours").innerHTML = formatNumber(hours);
+    document.getElementById("minutes").innerHTML = formatNumber(minutes);
+    document.getElementById("seconds").innerHTML = formatNumber(seconds);
+
+    // If the countdown is over, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+    }
+}, 1000);
