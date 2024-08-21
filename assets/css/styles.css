@@ -213,6 +213,7 @@ main .wish-box textarea {
     box-shadow: 0 0 1px 1px #cecece;
 }
 
+main .confirm-box button,
 main .wish-box button {
     background-color: #6d975a;
     padding: 6px 36px;
@@ -242,6 +243,29 @@ main .wish-box .wish-content .wish-item {
 main .wish-box .wish-content .wish-item .name {
     font-weight: 500;
     margin-bottom: 4px;
+}
+
+main .confirm-box input {
+    background-color: #eaefee;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    outline: none;
+    width: 100%;
+}
+
+main .confirm-box .event-box {
+    background-color: #eaefee;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    padding: 16px;
+}
+
+main .confirm-box .event-box .heading {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 footer .thankyou {
