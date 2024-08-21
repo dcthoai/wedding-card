@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thu & Cường</title>
 
+    <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -119,69 +121,98 @@
             </div>
         </div>
 
-        <div class="portrait">
+        <!-- <div class="portrait">
             <img src="" alt="">
             <img src="" alt="">
 
             <div class="portrait-title">Thu Đàm & Cường Trần</div>
-        </div>
+        </div> -->
 
         <div class="celebration-box py-5">
             <div class="heading">Hộp mừng cưới</div>
 
-            <div class="qr-code">
-                <h5 class="qr-code__name">Mừng cô dâu</h5>
-                <img src="" alt="QR code">
-
-                <p class="qr-code__info">Ngân hàng: VP Bank</p>
-                <p class="qr-code__info">STK: 3489t39857</p>
-                <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
-            </div>
-            <div class="qr-code">
-                <h5 class="qr-code__name">Mừng chú rể</h5>
-                <img src="" alt="QR code">
-
-                <p class="qr-code__info">Ngân hàng: VP Bank</p>
-                <p class="qr-code__info">STK: 3489t39857</p>
-                <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
+            <div class="row">
+                <div class="col-6">
+                    <div class="qr-code pb-3">
+                        <h5 class="qr-code__name w-100 text-center text-uppercase">Mừng cô dâu</h5>
+                        <img src="./assets/imgs/thu-qr.jpg" alt="QR code">
+        
+                        <p class="qr-code__info">Ngân hàng: Vietcombank</p>
+                        <p class="qr-code__info">STK: 1015652281</p>
+                        <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="qr-code pb-3">
+                        <h5 class="qr-code__name w-100 text-center text-uppercase">Mừng chú rể</h5>
+                        <img src="./assets/imgs/cuong-qr.jpg" alt="QR code">
+        
+                        <p class="qr-code__info">Ngân hàng: VP Bank</p>
+                        <p class="qr-code__info">STK: 68808898</p>
+                        <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="wish-box py-5">
             <h3 class="wish-box__title">Gửi lời chúc đến chúng tớ nhé!</h3>
 
-            <div class="wrapper-box">
-                <div class="wrapper">
-                    <div class="row">
-                        <div class="col-6">
-                            <input type="text" name="fullname" placeholder="Nhập tên của bạn" id="">
-                        </div>
-                        <div class="col-6">
-                            <input type="text" name="email" placeholder="Nhập email" id="">
-                        </div>
-
-                        <div class="col-12">
-                            <textarea name="content" placeholder="Nhập lới chúc của bạn" id=""></textarea>
-                        </div>
-
-                        <div class="col-12">
-                            <button class="submit">Gửi lời chúc</button>
-                        </div>
+            <div class="wrapper pb-5">
+                <div class="background"></div>
+                <div class="row px-5 py-4">
+                    <div class="col-6 d-flex justify-content-center">
+                        <input type="text" name="fullname" placeholder="Nhập tên của bạn *" id="">
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <input type="text" name="email" placeholder="Nhập email" id="">
                     </div>
 
-                    <div class="wish-content" id="wish-content-list">
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
+                    <div class="col-12 mt-4">
+                        <textarea class="w-100" rows="6" name="content" placeholder="Nhập lới chúc của bạn *" id=""></textarea>
+                    </div>
+
+                    <div class="col-12 text-center mt-5">
+                        <button class="submit">Gửi lời chúc</button>
+                    </div>
+                </div>
+
+                <div class="wish-content mt-5 p-3" id="wish-content-list">
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
+                    </div>
+                    <div class="wish-item">
+                        <div class="name">Nguyen Van a</div>
+                        <div class="content">Loi chuc nhu nay</div>
                     </div>
                 </div>
             </div>
@@ -189,18 +220,21 @@
     </main>
 
     <footer class="container">
-        <h1 class="thankyou py-5">Thank you</h1>
+        <h1 class="thankyou py-5">
+            <span>Thank</span>
+            <span>You</span>
+        </h1>
 
         <div class="wrapper py-5">
-            <h5 class="title">Thân gửi đến bạn bè và gia đình chúng con,</h5>
-            <p class="content">Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ được mọi người tới chúc phúc!</p>
-            <p class="content">Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ được mọi người tới chúc phúc!</p>
+            <h5 class="title">Thân gửi đến bạn bè & gia đình chúng con,</h5>
+            <p class="content">Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ/con được mọi người tới chúc phúc!</p>
+            <p class="content">Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ/con được mọi người tới chúc phúc!</p>
         </div>
 
-        <h5 class="owner py-5">Thu & Cường</h5>
+        <h5 class="owner pe-4">Thu & Cuong</h5>
     </footer>
 
-    <div class="copyright">Created by <a href="https://www.facebook.com/cth.169">dcthoai</a></div>
+    <div class="copyright mt-5 pt-5">Created by <a href="https://www.facebook.com/cth.169">dcthoai</a></div>
 
     <script src="./assets/js/main.js"></script>
 </body>
