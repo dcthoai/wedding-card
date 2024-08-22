@@ -348,6 +348,33 @@ main .confirm-box .event-box .heading {
     font-weight: 600;
 }
 
+main .album img {
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+main .album .album-head {
+    margin-bottom: 64px;
+}
+
+main .album .album-head h4 {
+    padding-left: 50%;
+    padding-top: 8px;
+    text-align: end;
+    font-family: 'Alex Brush';
+    font-size: 36px;
+    font-weight: 400;
+}
+
+main .album .album-head img {
+    border-radius: 8px;
+}
+
+main .album .album-item img {
+    aspect-ratio: 2/5;
+}
+
 footer .thankyou {
     margin-top: 250px;
     font-size: 200px;
@@ -392,6 +419,14 @@ footer .owner {
     font-family: 'Brittany';
     width: 100%;
     text-align: end;
+}
+
+footer .owner img {
+    width: 80px;
+    margin-bottom: 24px;
+    margin-left: -24px;
+    height: auto;
+    display: inline;
 }
 
 .copyright {
