@@ -18,15 +18,17 @@
 <body>
 
     <header class="container">
-        <div class="avatar pt-5 d-flex flex-column align-items-start">
-            <img src="./assets/imgs/bg2.jpg" alt="Avatar">
+        <nav class="d-flex py-3">
+            <div class="nav-box">
+                <a href="#event" class="nav-item text-uppercase">Sự kiện cưới</a>
+                <a href="#attend" class="nav-item text-uppercase">Tham dự</a>
+                <a href="#album" class="nav-item text-uppercase">Hình cưới</a>
+                <a href="#wish" class="nav-item text-uppercase">Gửi lời chúc</a>
+                <a href="#gift" class="nav-item text-uppercase">Mừng cưới</a>
+            </div>
+        </nav>
 
-            <menu>
-
-            </menu>
-        </div>
-
-        <div class="title pb-5 row flex-column align-items-end">
+        <div class="title py-5 row flex-column align-items-end">
             <div class="col-12 col-md-9 col-lg-6">
                 <div class="row w-100 align-items-center">
                     <div class="first-text"><div>Chúng tớ</div></div>
@@ -121,41 +123,59 @@
             </div>
         </div>
 
-        <!-- <div class="portrait">
-            <img src="" alt="">
-            <img src="" alt="">
+        <div class="event pt-5 mt-4" id="event">
+            <div class="heading">Sự kiện cưới</div>
 
-            <div class="portrait-title">Thu Đàm & Cường Trần</div>
-        </div> -->
+            <div class="row justify-content-center">
+                <div class="event-item col-12 col-sm-6">
+                    <div class="pb-3">
+                        <h5 class="w-100 text-center text-uppercase title">Lễ hỏi nhà trai</h5>
+                        <img src="./assets/imgs/bg2.jpg" alt="img">
+        
+                        <p class="date">10H 04/09/2024</p>
+                        <p class="place">Tư gia, làng Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
+                    </div>
+                </div>
+                <div class="event-item col-12 col-sm-6">
+                    <div class="pb-3">
+                        <h5 class="w-100 text-center text-uppercase title">Lễ hỏi nhà gái</h5>
+                        <img src="./assets/imgs/bg2.jpg" alt="img">
 
-        <div class="celebration-box py-5">
+                        <p class="date">8H 04/09/2024</p>
+                        <p class="place">Tư gia, thôn Đoan Xuyên, xã Ứng Hoè, huyện Ninh Giang, Hải Dương</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="celebration-box py-5" id="gift">
             <div class="heading">Hộp mừng cưới</div>
 
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-sm-6 mb-4">
                     <div class="qr-code pb-3">
                         <h5 class="qr-code__name w-100 text-center text-uppercase">Mừng cô dâu</h5>
                         <img src="./assets/imgs/thu-qr.jpg" alt="QR code">
-        
-                        <p class="qr-code__info">Ngân hàng: Vietcombank</p>
-                        <p class="qr-code__info">STK: 1015652281</p>
-                        <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="qr-code pb-3">
-                        <h5 class="qr-code__name w-100 text-center text-uppercase">Mừng chú rể</h5>
-                        <img src="./assets/imgs/cuong-qr.jpg" alt="QR code">
         
                         <p class="qr-code__info">Ngân hàng: VP Bank</p>
                         <p class="qr-code__info">STK: 68808898</p>
                         <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
                     </div>
                 </div>
+                <div class="col-12 col-sm-6">
+                    <div class="qr-code pb-3">
+                        <h5 class="qr-code__name w-100 text-center text-uppercase">Mừng chú rể</h5>
+                        <img src="./assets/imgs/cuong-qr.jpg" alt="QR code">
+
+                        <p class="qr-code__info">Ngân hàng: Vietcombank</p>
+                        <p class="qr-code__info">STK: 1015652281</p>
+                        <p class="qr-code__info">Chủ tài khoản: Đàm Thị Thu</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="wish-box py-5">
+        <div class="wish-box py-5" id="wish">
             <h3 class="wish-box__title">Gửi lời chúc đến chúng tớ nhé!</h3>
 
             <div class="wrapper pb-5">
@@ -218,8 +238,8 @@
             </div>
         </div>
 
-        <div class="confirm-box mt-5 pt-5">
-            <h3 class="title w-100 text-center fw-bold text-uppercase">Xác nhận tham dự</h3>
+        <div class="confirm-box pt-5" id="attend">
+            <h3 class="title w-100 pt-5 text-center fw-bold text-uppercase">Xác nhận tham dự</h3>
 
             <div class="row px-5 py-4">
                 <div class="col-6 d-flex justify-content-center">
