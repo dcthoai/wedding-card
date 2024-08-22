@@ -30,7 +30,8 @@ body {
 
 .container {
     width: 900px;
-    max-width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     margin: 0 auto;
 }
 
@@ -43,7 +44,6 @@ header nav {
     background-color: #fff;
     z-index: 100;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px 2px #eee;
     display: flex;
     justify-content: center;
 }
@@ -371,6 +371,7 @@ main .album img {
 
 main .album .album-head {
     margin-bottom: 64px;
+    padding: 0 8px;
 }
 
 main .album .album-head h4 {
@@ -458,6 +459,12 @@ footer .owner img {
     text-decoration: none;
 }
 
+main .event .event-name {
+    line-height: 32px;
+    padding-top: 2px;
+    padding-left: 8px;
+}
+
 @media (max-width: 768px) {
     header nav .navbar-collapse {
         background-color: #fff;
@@ -478,14 +485,15 @@ footer .owner img {
     }
 
     header .frontground .wedding-title {
-        font-size: 60px;
+        font-size: 72px;
         left: 20px;
+        top: calc(100% - 56px);
     }
 
     header .frontground .wedding-member {
         top: calc(100% + 48px);
         left: 20px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     main .event .event-item {
@@ -524,7 +532,7 @@ footer .owner img {
     main .event .heading, 
     main .wish-box .wish-box__title, 
     main .celebration-box .heading {
-        font-size: 36px;
+        font-size: 42px;
         width: 100%;
         text-align: center;
     }
@@ -561,13 +569,9 @@ footer .owner img {
         margin-top: 140px;
     }
 
-    main .wish-box input {
-        padding: 6px 12px;
-    }
-
     main .calendar-title {
         margin-top: 140px;
-        font-size: 36px;
+        font-size: 42px;
     }
 
     header .title {
@@ -610,5 +614,18 @@ footer .owner img {
 
     main .celebration-box .heading {
         margin-top: 40px;
+    }
+
+    main .celebration-box .qr-code {
+        padding: 0 32px;
+    }
+
+    main .wish-box .wish-content {
+        max-width: calc(100% - 48px);
+    }
+
+    main .wish-box input,
+    main .confirm-box input {
+        padding: 10px 16px;
     }
 }
