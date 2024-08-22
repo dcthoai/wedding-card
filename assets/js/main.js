@@ -36,3 +36,27 @@ let x = setInterval(function() {
         document.getElementById("seconds").innerHTML = "00";
     }
 }, 1000);
+
+const navbar = document.querySelector('header nav');
+const navbarToggle = document.getElementById('header-navbar');
+const navbarLinks = document.querySelectorAll('header nav .custom-navbar-link li');
+
+// Function to check if the click was outside the navbar
+function handleClickOutside(event) {
+    // Check if the clicked element is not the navbar and is not a child of the navbar
+    if (!navbar.contains(event.target)) {
+        // Remove the 'show' class from the navbarToggle
+        navbarToggle.classList.remove('show');
+    }
+}
+
+// Listen for the mousedown event on the entire document
+document.addEventListener('mousedown', handleClickOutside);
+
+navbarLinks.forEach(link => {
+    link.addEventListener('mousedown', () => {
+        setTimeout(() => {
+            navbarToggle.classList.remove('show');
+        }, 300);
+    });
+})
