@@ -6,6 +6,9 @@
     <title>Thu & Cường</title>
 
     <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
+        
+    <!-- CSS icon from Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
@@ -13,9 +16,41 @@
         crossorigin="anonymous">
 
     <link rel="stylesheet" href="./assets/css/calender.css">
+    <link rel="stylesheet" href="./assets/css/notify.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+
+    <!--  Animation loading  -->
+    <div class="loading">
+        <div class="loading__icon"></div>
+    </div>
+
+    <!-- Pop up to show notifications -->
+    <div id="notify">
+        <div class="d-flex align-items-center">
+            <div class="notify-status d-flex justify-content-center align-items-center px-3 px-md-4 fs-1">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-bug"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <i class="fa-regular fa-comment-dots"></i>
+            </div>
+
+            <div class="notify-content">
+                <div id="notify-title"></div>
+                <div id="notify-message"></div>
+            </div>
+
+            <div id="notify-close-button" class="justify-content-center align-items-center px-2 px-md-3 fs-3">
+                <i class="w-75 p-3 text-secondary fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <div class="w-100 py-3 pe-4 justify-content-end notify-response" id="notify-response">
+            <button class="ok me-2 fw-bold" id="ok">Ok</button>
+            <button class="cancel fw-bold" id="cancel">Hủy</button>
+        </div>
+    </div>
 
     <div class="container">
         <header>
@@ -33,16 +68,16 @@
                                 <a href="#event" class="nav-item text-uppercase">Sự kiện cưới</a>
                             </li>
                             <li class="my-2 my-md-0 mt-md-0 me-2 me-lg-4">                
-                                <a href="#attend" class="nav-item text-uppercase">Tham dự</a>
+                                <a href="#album" class="nav-item text-uppercase">Hình cưới</a>
                             </li>
                             <li class="my-2 my-md-0 mt-md-0 me-2 me-lg-4">                
-                                <a href="#album" class="nav-item text-uppercase">Hình cưới</a>
+                                <a href="#gift" class="nav-item text-uppercase">Mừng cưới</a>
                             </li>
                             <li class="my-2 my-md-0 mt-md-0 me-2 me-lg-4">                
                                 <a href="#wish" class="nav-item text-uppercase">Gửi lời chúc</a>
                             </li>
                             <li class="my-2 my-md-0 mt-md-0 me-2 me-lg-4">                
-                                <a href="#gift" class="nav-item text-uppercase">Mừng cưới</a>
+                                <a href="#attend" class="nav-item text-uppercase">Tham dự</a>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +85,7 @@
             </nav>
 
             <div class="title py-5 row flex-column align-items-end">
-                <div class="col-12 col-md-9 col-lg-6">
+                <div class="col-12 col-md-9">
                     <div class="row w-100 align-items-center justify-content-end">
                         <div class="first-text"><div>Chúng tớ</div></div>
                         <div class="number">
@@ -190,8 +225,8 @@
                 </div>
             </div>
 
-            <div class="album pt-5 mt-4" id="album">
-                <div class="album-head">
+            <div class="album pt-5 mt-md-5" id="album">
+                <div class="album-head pt-md-5">
                     <div class="row">
                         <div class="col-12 col-md-3"><h4>Xem ảnh cùng chúng tớ nào</h4></div>
                         <div class="col-12 col-md-9"><img src="./assets/imgs/bg2.jpg" alt="img"></div>
@@ -242,59 +277,22 @@
                     <div class="background"></div>
                     <div class="row px-4 px-md-5 py-4">
                         <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <input type="text" name="fullname" placeholder="Nhập tên của bạn *" id="">
+                            <input type="text" name="fullname" placeholder="Nhập tên của bạn *" id="fullname-wish">
                         </div>
                         <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex justify-content-center">
-                            <input type="text" name="email" placeholder="Nhập email" id="">
+                            <input type="text" name="email" placeholder="Nhập email" id="email-wish">
                         </div>
 
                         <div class="col-12 mt-4">
-                            <textarea class="w-100" rows="6" name="content" placeholder="Nhập lới chúc của bạn *" id=""></textarea>
+                            <textarea class="w-100" rows="6" name="content" placeholder="Nhập lới chúc của bạn *" id="content-wish"></textarea>
                         </div>
 
                         <div class="col-12 text-center mt-4 mt-md-5">
-                            <button class="submit">Gửi lời chúc</button>
+                            <button id="submit-wish" class="button">Gửi lời chúc</button>
                         </div>
                     </div>
 
-                    <div class="wish-content mt-5 p-3" id="wish-content-list">
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                        <div class="wish-item">
-                            <div class="name">Nguyen Van a</div>
-                            <div class="content">Loi chuc nhu nay</div>
-                        </div>
-                    </div>
+                    <div class="wish-content mt-5 p-3" id="wish-content-list"></div>
                 </div>
             </div>
 
@@ -303,10 +301,10 @@
 
                 <div class="row px-3 px-md-5 py-4">
                     <div class="col-12 col-md-6 d-flex justify-content-center">
-                        <input type="text" name="fullname" placeholder="Nhập tên của bạn *" id="">
+                        <input type="text" name="fullname" placeholder="Nhập tên của bạn *" id="fullname-attend">
                     </div>
                     <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex justify-content-center">
-                        <input type="text" name="email" placeholder="Nhập email" id="">
+                        <input type="text" name="email" placeholder="Nhập email" id="email-attend">
                     </div>
 
                     <div class="col-12 mt-4">
@@ -314,24 +312,28 @@
                             <h5 class="heading">Sự kiện sẽ tham dự</h5>
 
                             <div class="row mt-4 justify-content-center">
-                                <div class="event d-flex align-items-center col-12 col-md-6 col-lg-4 mb-2">
-                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="">
-                                    <p class="event-name mb-0 d-inline">Lễ ăn hỏi</p>
+                                <div class="event d-flex align-items-center col-12 col-md-6 mb-2">
+                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="groom-engagement">
+                                    <p class="event-name mb-0 d-inline">Lễ ăn hỏi nhà trai</p>
                                 </div>
-                                <div class="event d-flex align-items-center col-12 col-md-6 col-lg-4 mb-2">
-                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="">
+                                <div class="event d-flex align-items-center col-12 col-md-6 mb-2">
+                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="bride-engagement">
+                                    <p class="event-name mb-0 d-inline">Lễ ăn hỏi nhà gái</p>
+                                </div>
+                                <div class="event d-flex align-items-center col-12 col-md-6 mb-2">
+                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="groom-wedding">
                                     <p class="event-name mb-0 d-inline">Tiệc cưới nhà trai</p>
                                 </div>
-                                <div class="event d-flex align-items-center col-12 col-md-6 col-lg-4 mb-2">
-                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="">
-                                    <p class="event-name mb-0 d-inline">Tiệc cưới nhà giá</p>
+                                <div class="event d-flex align-items-center col-12 col-md-6 mb-2">
+                                    <input class="d-inline me-2" style="width: 16px; height: 16px;" type="checkbox" name="" id="bride-wedding">
+                                    <p class="event-name mb-0 d-inline">Tiệc cưới nhà gái</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-12 text-center mt-4 mt-md-5">
-                        <button class="submit">Xác nhận</button>
+                        <button class="button" id="submit-attend">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -339,14 +341,17 @@
 
         <footer>
             <h1 class="thankyou py-3 py-md-5">
-                <span>Thank</span>
-                <span>You</span>
+                <span>Thank you!</span>
             </h1>
 
             <div class="wrapper py-3 py-md-5">
-                <h5 class="title">Thân gửi đến bạn bè & gia đình chúng con,</h5>
-                <p class="content">Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ/con được mọi người tới chúc phúc!</p>
-                <p class="content">Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ/con được mọi người tới chúc phúc!</p>
+                <h5 class="title">Thân gửi đến bạn bè & gia đình,</h5>
+                <p class="content">
+                    Biết ơn và trân quý lắm phút giây trọng đại của chúng tớ/con 
+                    được mọi người tới tham dự và chúc phúc, khoảnh khắc ấy
+                    sẽ thật ấm áp và đầy ý nghĩa!
+                </p>
+                <p class="content">Thương.</p>
             </div>
 
             <h5 class="owner pe-4">
@@ -356,6 +361,10 @@
         </footer>
     </div>
 
+    <!-- PHP -->
+    <?php ?>
+    <!-- End PHP -->
+
     <div class="copyright mt-5 pt-5">Created by <a href="https://www.facebook.com/cth.169">dcthoai</a></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
@@ -364,6 +373,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" 
         crossorigin="anonymous"></script>
+
+    <script src="./assets/js/notify.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/wishes.js"></script>
+    <script src="./assets/js/attend.js"></script>
 </body>
 </html>
