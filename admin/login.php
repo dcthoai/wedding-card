@@ -1,3 +1,64 @@
+
+<?php
+
+include '../connection.php';
+
+session_start();
+error_reporting(0);
+ini_set('display_errors', 0);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    header("Content-Type: application/json");
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    if (isset($data['username']) && isset($data['password'])) {
+        $username = $data['username'];
+        $password = $data['password'];
+
+        $stmt = $conn->prepare("SELECT role FROM users WHERE username = ? AND password = ?");
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($role);
+            $stmt->fetch();
+
+            if ($role === "ROLE_ADMIN") {
+                $_SESSION['user'] = $username; // Save authenticated state in session
+
+                $response = [
+                    "status" => "success",
+                    "message" => "Login successful"
+                ];
+            } else {
+                $response = [
+                    "status" => "error",
+                    "message" => "Access denied: User is not an admin"
+                ];
+            }
+        } else {
+            $response = [
+                "status" => "error",
+                "message" => "Invalid username or password"
+            ];
+        }
+
+        $stmt->close();
+    } else {
+        $response = [
+            "status" => "error",
+            "message" => "Missing username or password"
+        ];
+    }
+
+    $conn->close();
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -13,6 +74,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
         crossorigin="anonymous">
     <!-- CSS custom -->
+    <link rel="stylesheet" href="../assets/css/notify.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
 <body>
@@ -76,5 +139,9 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
+    <script src="../assets/js/constants.js"></script>
+    <script src="../assets/js/notify.js"></script>
+    <script src="../assets/js/validator.js"></script>
+    <script src="../assets/js/login.js"></script>
 </body>
 </html>

@@ -517,6 +517,7 @@ main .event .event-name {
         top: calc(100% + 48px);
         left: 20px;
         font-size: 14px;
+        letter-spacing: 0;
     }
 
     main .event .event-item {

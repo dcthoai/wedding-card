@@ -21,6 +21,11 @@ const getEvent = () => {
     if (groomWedding.checked)
         eventId.push(4);
 
+    groomEngagementCeremony.checked = false;
+    brideEngagementCeremony.checked = false;
+    groomWedding.checked = false;
+    brideWedding.checked = false;
+
     return eventId;
 }
 
@@ -34,7 +39,7 @@ const saveAttendUser = async () => {
 
         openLoadingAnimation();
 
-        const response = await fetch('http://localhost:8080/card/attend/save.php', {
+        const response = await fetch(BASE_URL + '/attend/save.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,10 +57,6 @@ const saveAttendUser = async () => {
             if (result.status === 'success') {
                 fullNameInput.value = '';
                 emailInput.value = '';
-                groomEngagementCeremony.checked = false;
-                brideEngagementCeremony.checked = false;
-                groomWedding.checked = false;
-                brideWedding.checked = false;
 
                 openPopupNotify('Thành công', '', 'success');
             } else {

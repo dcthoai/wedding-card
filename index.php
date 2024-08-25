@@ -98,7 +98,8 @@
             </div>
 
             <div class="frontground">
-                <img src="./assets/imgs/bg2.jpg" alt="Thu and Cuong">
+                <img class="image-fetch-by-position" data-position="banner" 
+                    src="./assets/imgs/bg2.jpg" alt="Thu and Cuong">
                 <h1 class="wedding-title">Wedding</h1>
                 <h5 class="wedding-member">Thu Đàm & Cường Trần</h5>
             </div>
@@ -186,7 +187,8 @@
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ hỏi nhà trai</h5>
-                            <img src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="image-fetch-by-position" data-position="groom-1" 
+                                src="./assets/imgs/bg2.jpg" alt="img">
             
                             <p class="date">10H 04/09/2024</p>
                             <p class="place">Tư gia, làng Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
@@ -195,7 +197,8 @@
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ hỏi nhà gái</h5>
-                            <img src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="image-fetch-by-position" data-position="bride-1" 
+                                src="./assets/imgs/bg2.jpg" alt="img">
 
                             <p class="date">8H 04/09/2024</p>
                             <p class="place">Tư gia, thôn Đoan Xuyên, xã Ứng Hoè, huyện Ninh Giang, Hải Dương</p>
@@ -207,7 +210,8 @@
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ cưới nhà trai</h5>
-                            <img src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="image-fetch-by-position" data-position="groom-2" 
+                                src="./assets/imgs/bg2.jpg" alt="img">
             
                             <p class="date">10H 08/09/2024</p>
                             <p class="place">Tư gia, làng Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
@@ -216,7 +220,8 @@
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ cưới nhà gái</h5>
-                            <img src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="image-fetch-by-position" data-position="bride-2" 
+                                src="./assets/imgs/bg2.jpg" alt="img">
 
                             <p class="date">17h 07/09/2024</p>
                             <p class="place">Tư gia, thôn Đoan Xuyên, xã Ứng Hoè, huyện Ninh Giang, Hải Dương</p>
@@ -229,7 +234,10 @@
                 <div class="album-head pt-md-5">
                     <div class="row">
                         <div class="col-12 col-md-3"><h4>Xem ảnh cùng chúng tớ nào</h4></div>
-                        <div class="col-12 col-md-9"><img src="./assets/imgs/bg2.jpg" alt="img"></div>
+                        <div class="col-12 col-md-9">
+                            <img class="image-fetch-by-position" data-position="album-top" 
+                                src="./assets/imgs/bg2.jpg" alt="img">
+                        </div>
                     </div>
                 </div>
 
@@ -374,6 +382,7 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" 
         crossorigin="anonymous"></script>
 
+    <script src="./assets/js/constants.js"></script>
     <script src="./assets/js/notify.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/wishes.js"></script>

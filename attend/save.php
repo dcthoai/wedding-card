@@ -1,6 +1,7 @@
 <?php
 
 include '../connection.php';
+include '../convert.php';
 
 header("Content-Type: application/json");
 
@@ -17,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($fullnameParticipant)) {
             $columns[] = "participant";
             $values[] = "'$fullnameParticipant'";
+            $columns[] = "participant_search";
+            $values[] = "'" . removeAccents($fullnameParticipant) . "'";
         }
 
         if (!empty($emailParticipant)) {

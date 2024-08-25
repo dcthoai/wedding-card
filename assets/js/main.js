@@ -59,4 +59,36 @@ navbarLinks.forEach(link => {
             navbarToggle.classList.remove('show');
         }, 300);
     });
+});
+
+const getImageByPosition = (position, element) => {
+    fetch(BASE_URL + `/image.php?position=${position}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success')
+            element.src = data.path.replace(/^\.{2}/, ''); // Replace .. in url
+        else
+            element.src = '';
+    })
+    .catch(error => {
+        element.src = '';
+        console.error(error);
+    })
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const imageLoadByPositions = document.querySelectorAll('img.image-fetch-by-position');
+
+    imageLoadByPositions.forEach(image => {
+        const position = image.dataset.position;
+
+        getImageByPosition(position, image);
+    })
 })

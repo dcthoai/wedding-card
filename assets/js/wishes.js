@@ -8,7 +8,7 @@ const saveWish = async () => {
     try {
         openLoadingAnimation();
 
-        const response = await fetch('http://localhost:8080/card/wishes/save.php', {
+        const response = await fetch(BASE_URL + '/wishes/save.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,20 +44,22 @@ const saveWish = async () => {
     }
 }
 
-const getAllWishes = async () => {
-    try {
-        const response = await fetch('http://localhost:8080/card/wishes/get.php');
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+const getWishes = () => {
+    fetch(BASE_URL + '/wishes/get.php', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
         }
-
-        const wishes = await response.json();
-
-        return wishes;
-    } catch (error) {
-        console.error('Error fetching wishes:', error);
-    }
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayWishes(data);
+    })
+    .catch(error => {
+        console.error(error);
+    })
 }
 
 const displayWishes = (wishes) => {
@@ -73,14 +75,6 @@ const displayWishes = (wishes) => {
     });
 
     wishContentBox.innerHTML = htmlContent;
-}
-
-const getWishes = async () => {
-    const wishes = await getAllWishes();
-
-    if (wishes) {
-        displayWishes(wishes);
-    }
 }
 
 window.addEventListener('DOMContentLoaded', () => {

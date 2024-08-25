@@ -1,14 +1,47 @@
 <?php
-// Bắt đầu session
+
 session_start();
 
-// Hủy tất cả dữ liệu session
-session_unset();
+// Check user authorities
+if (!isset($_SESSION['user'])) {
+    header("Location: ./login.php");
+    exit();
+}
 
-// Hủy session
-session_destroy();
+error_reporting(0);
+ini_set('display_errors', 0);
+header("Content-Type: application/json");
 
-// Chuyển hướng về trang đăng nhập
-header("Location: login.html");
+$response = [];
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get all session valid
+    $_SESSION = array();
+
+    // Destroy cookies if it exists
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
+    }
+
+    session_destroy();
+
+    $response = [
+        "status" => "success",
+        "message" => "Logout successful"
+    ];
+    
+} else {
+    $response = [
+        "status" => "error",
+        "message" => "Invalid request method"
+    ];
+}
+
+echo json_encode($response);
 exit();
+
 ?>

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-<head th:fragment="head">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle; ?></title>
+    <title><?php echo $pageTitle ?></title>
 
     <!-- CSS icon from Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -15,15 +14,15 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
         crossorigin="anonymous">
     <!-- CSS custom -->
+    <link rel="stylesheet" href="../assets/css/notify.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 
 <body>
 
     <!--  Animation loading  -->
-    <div th:fragment="loading-animation">
-        <div class="loading">
-            <div class="loading__icon"></div>
-        </div>
+    <div class="loading">
+        <div class="loading__icon"></div>
     </div>
 
     <!-- Pop up to show notifications -->
@@ -55,9 +54,10 @@
     <!-- Body -->
     <nav class="navbar navbar-expand fixed-top navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" th:href="${RESOURCES_URL} + 'admin/'">Quản trị viên</a>
+        <a class="navbar-brand ps-3" href="../admin">Quản trị viên</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-dark btn-sm order-1 order-lg-0 ms-md-5 me-3 me-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#sideBarNav">
+        <button class="btn btn-dark btn-sm order-1 order-lg-0 ms-md-5 me-3 me-lg-0" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#sideBarNav">
             <i class="fas fa-bars"></i>
         </button>
 
@@ -67,60 +67,29 @@
         </ul>
     </nav>
 
-    <div class="content d-flex vw-100 vh-100">
+    <div class="content d-flex w-100 vh-100" style="overflow-x: hidden;">
         <div class="collapse collapse-horizontal show vh-100" id="sideBarNav">
             <div class="h-100 navbar-left">
                 <!-- Sidebar controls -->
-                <div class="accordion pt-3" id="accordionNav">
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button px-4 py-3" type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse-1">
-                                <span class="m-0 text-light fs-6 fw-medium opacity-50">Trang chủ</span>
-                            </button>
-                        </h2>
-                        <div id="collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionNav">
-                            <div class="accordion-body px-0 pt-0">
-                                <div class="">
-                                    <a th:href="${RESOURCES_URL} + 'admin/'" class="text-decoration-none"><div class="navbtn">Video</div></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed px-4 py-3" type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse-2">
-                                <span class="m-0 text-light fs-6 fw-medium opacity-50">Giới thiệu</span>
-                            </button>
-                        </h2>
-                        <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionNav">
-                            <div class="accordion-body px-0 pt-0">
-                                <div class="text-light fs-6 fw-normal">
-                                    <a th:href="${RESOURCES_URL} + 'admin/'" class="text-decoration-none"><div class="navbtn">Banner</div></a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="p-4">
+                    <div class="fs-6 fw-medium opacity-50">
+                        <a href="../admin" class="text-decoration-none text-light">Danh sách tham dự</a>
+                    </div> 
+                    <br>
+    
+                    <div class="fs-6 fw-medium opacity-50">
+                        <a href="./edit.php" class="text-decoration-none text-light">Chỉnh sửa ảnh</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="content-body px-0 py-4 px-md-4">
-            <div class="row">
-                <div class="col-12">
-                    <main class="main-content">
-                        <!--  Change content here  -->
-                        <h4 class="p-3 pt-0 ps-lg-0 fs-4 fw-semibold">Title</h4>
-
-                        <?php echo $content; ?>
-                        <!--  Change content here  -->
-                    </main>
-                </div>
-            </div>
+        <div class="content-body px-0 p-md-4">
+            <main class="main-content">
+                <!--  Change content here  -->
+                <?php echo $htmlContent ?>
+                <!--  Change content here  -->
+            </main>
         </div>
     </div>
     <!-- End Body -->
@@ -139,5 +108,9 @@
             sideBarNav.classList.remove('show');
         }
     </script>
+    
+    <script src="../assets/js/constants.js"></script>
+    <script src="../assets/js/notify.js"></script>
+    <script src="../assets/js/logout.js"></script>
 </body>
 </html>
