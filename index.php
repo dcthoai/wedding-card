@@ -243,9 +243,15 @@
 
                 <div class="album-item">
                     <div class="row justify-content-center">
-                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4"><img src="./assets/imgs/bg2.jpg" alt="img"></div>
-                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 mt-md-5"><img src="./assets/imgs/bg2.jpg" alt="img"></div>
-                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4 mt-4 mt-md-0"><img src="./assets/imgs/bg2.jpg" alt="img"></div>
+                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4">
+                            <img src="" class="image-fetch-by-position" data-position="album-col-1" alt="img">
+                        </div>
+                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 mt-md-5">
+                            <img src="" class="image-fetch-by-position" data-position="album-col-2" alt="img">
+                        </div>
+                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4 mt-4 mt-md-0">
+                            <img src="" class="image-fetch-by-position" data-position="album-col-3" alt="img">
+                        </div>
                     </div>
                 </div>
                 <div class="album-item"></div>

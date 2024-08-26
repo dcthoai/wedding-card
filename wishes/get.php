@@ -6,7 +6,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 header("Content-Type: application/json");
 
-$sql = "SELECT fullname, email, content, created_at FROM wishes ORDER BY created_at DESC";
+$sql = "SELECT fullname, content, created_at FROM wishes WHERE status = '1' ORDER BY created_at DESC";
 $result = $conn->query($sql);
 $wishes = [];
 

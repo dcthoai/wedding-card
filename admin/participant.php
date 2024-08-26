@@ -78,8 +78,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         break;
     case 'GET':
-        $data = json_decode(file_get_contents('php://input'), true);
-    
         if (isset($_GET['event'])) {
             $eventId = intval($_GET['event']);
 

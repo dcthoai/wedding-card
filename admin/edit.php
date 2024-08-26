@@ -21,45 +21,45 @@
 
         <div class="img-wrapper" data-position="banner">
             <img style="aspect-ratio: 5/3; object-fit: cover; max-width: 600px;" 
-                class="rounded img-fluid w-100" src="../assets/imgs/bg2.jpg">
+                class="rounded img-fluid w-100" src="" alt="img">
 
-            <input type="file" class="form-control mt-4 image-input-upload" style="max-width: 600px;">
+            <input type="file" class="form-control mt-4" style="max-width: 600px;">
         </div>
     </div>
 
     <div class="edit-event-image mt-5 pt-4">
         <h3 class="fs-5 pb-4">Sửa ảnh sự kiện cưới</h3>
 
-        <div class="row mx-auto w-100 justify-content-center">
-            <div class="event-item col-12 col-sm-6 col-lg-3 p-2 mb-3">
+        <div class="row justify-content-center">
+            <div class="event-item col-12 col-sm-6 col-lg-3 mb-3">
                 <div class="pb-3 bg-body-secondary p-4 rounded img-wrapper" data-position="groom-1">
                     <h5 class="w-100 text-center title fs-6 mb-3">Lễ hỏi nhà trai</h5>
-                    <img src="../assets/imgs/bg2.jpg" class="rounded img-fluid" 
+                    <img src="" class="rounded img-fluid w-100" 
                         style="aspect-ratio: 3/4; object-fit: cover;" alt="img">
                     <input type="file" class="form-control mt-4">
                 </div>
             </div>
-            <div class="event-item col-12 col-sm-6 col-lg-3 p-2 mb-3">
+            <div class="event-item col-12 col-sm-6 col-lg-3 mb-3">
                 <div class="pb-3 bg-body-secondary p-4 rounded img-wrapper" data-position="bride-1">
                     <h5 class="w-100 text-center title fs-6 mb-3">Lễ hỏi nhà gái</h5>
-                    <img src="../assets/imgs/bg2.jpg" class="rounded img-fluid" 
+                    <img src="" class="rounded img-fluid w-100" 
                         style="aspect-ratio: 3/4; object-fit: cover;" alt="img">
                     <input type="file" class="form-control mt-4">
                 </div>
             </div>
 
-            <div class="event-item col-12 col-sm-6 col-lg-3 p-2 mb-3">
+            <div class="event-item col-12 col-sm-6 col-lg-3 mb-3">
                 <div class="pb-3 bg-body-secondary p-4 rounded img-wrapper" data-position="groom-2">
                     <h5 class="w-100 text-center title fs-6 mb-3">Lễ cưới nhà trai</h5>
-                    <img src="../assets/imgs/bg2.jpg" class="rounded img-fluid" 
+                    <img src="" class="rounded img-fluid w-100" 
                         style="aspect-ratio: 3/4; object-fit: cover;" alt="img">
                     <input type="file" class="form-control mt-4">
                 </div>
             </div>
-            <div class="event-item col-12 col-sm-6 col-lg-3 p-2 mb-3">
+            <div class="event-item col-12 col-sm-6 col-lg-3 mb-3">
                 <div class="pb-3 bg-body-secondary p-4 rounded img-wrapper" data-position="bride-2">
                     <h5 class="w-100 text-center title fs-6 mb-3">Lễ cưới nhà gái</h5>
-                    <img src="../assets/imgs/bg2.jpg" class="rounded img-fluid" 
+                    <img src="" class="rounded img-fluid w-100" 
                         style="aspect-ratio: 3/4; object-fit: cover;" alt="img">
                     <input type="file" class="form-control mt-4">
                 </div>
@@ -73,13 +73,43 @@
         <div class="img-wrapper" data-position="album-top">
             <h3 class="fs-6">Ảnh album lớn</h3>
             <img style="aspect-ratio: 4/3; object-fit: cover; max-width: 600px;" 
-                class="rounded img-fluid w-100" src="../assets/imgs/bg2.jpg">
+                class="rounded img-fluid w-100" alt="img" src="">
 
-            <input type="file" class="form-control mt-4 w-100 image-input-upload" style="max-width: 600px;">
+            <input type="file" class="form-control mt-4 w-100" style="max-width: 600px;">
         </div>
 
-        <div class="upload-more">
-            <!-- <h3 class="fs-6 mb-3">Thêm ảnh</h3> -->
+        <h3 class="fs-6 mt-5 mb-0">Ảnh dọc</h3>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-auto">
+                <div class="img-wrapper p-3 bg-body-secondary rounded mt-4" data-position="album-col-1">
+                    <img style="aspect-ratio: 2/5; object-fit: cover; max-width: 320px;" 
+                        class="rounded img-fluid w-100" alt="img" src="">
+
+                    <input type="file" class="form-control mt-4 w-100">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-auto">
+                <div class="img-wrapper p-3 bg-body-secondary rounded mt-4" data-position="album-col-2">
+                    <img style="aspect-ratio: 2/5; object-fit: cover; max-width: 320px;" 
+                        class="rounded img-fluid w-100" alt="img" src="">
+
+                    <input type="file" class="form-control mt-4 w-100">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-auto">
+                <div class="img-wrapper p-3 bg-body-secondary rounded mt-4" data-position="album-col-3">
+                    <img style="aspect-ratio: 2/5; object-fit: cover; max-width: 320px;" 
+                        class="rounded img-fluid w-100" alt="img" src="">
+
+                    <input type="file" class="form-control mt-4 w-100">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="upload-more">
+            <h3 class="fs-6 mb-3">Thêm ảnh</h3>
 
             <div class="row w-100 justify-content-beetween">
                 <div class="col-6 col-md-3 col-lg-2 col-xxl-1"></div>
@@ -90,8 +120,8 @@
                 <div class="col-6 col-md-3 col-lg-2 col-xxl-1"></div>
             </div>
 
-            <!-- <input type="file" class="form-control mt-4" id="thumbnail" name="thumbnail"> -->
-        </div>
+            <input type="file" class="form-control mt-4" id="thumbnail" name="thumbnail">
+        </div> -->
     </div>
 </div>
 
