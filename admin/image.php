@@ -46,8 +46,9 @@ function deleteImage($imageUrl) {
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':
-        if (isset($_FILES['image']) && isset($_POST['position'])) {
+        if (isset($_FILES['image']) && isset($_POST['imageName']) && isset($_POST['position'])) {
             $position = $_POST['position'];
+            $imageName = $_POST['imageName'];
             $image = $_FILES['image'];
             $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
 
@@ -82,10 +83,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
             
             include '../connection.php';
 
-            if (!empty($position)) {
-                $selectSql = "SELECT path FROM album WHERE position = ?";
+            if (!empty($imageName) && !empty($position)) {
+                $selectSql = "SELECT path FROM album WHERE name = ?";
                 $stmt = $conn->prepare($selectSql);
-                $stmt->bind_param('s', $position);
+                $stmt->bind_param('s', $imageName);
                 $stmt->execute();
                 $result = $stmt->get_result();
             
@@ -95,9 +96,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
                     deleteImage($oldPath);
             
-                    $updateSql = "UPDATE album SET path = ? WHERE position = ?";
+                    $updateSql = "UPDATE album SET path = ? WHERE name = ?";
                     $stmt = $conn->prepare($updateSql);
-                    $stmt->bind_param('ss', $imageUrl, $position);
+                    $stmt->bind_param('ss', $imageUrl, $imageName);
             
                     if ($stmt->execute()) {
                         echo json_encode([
@@ -108,9 +109,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
                         echo json_encode(["status" => "error", "message" => "Failed to update record"]);
                     }
                 } else {
-                    $insertSql = "INSERT INTO album (position, path) VALUES (?, ?)";
+                    $insertSql = "INSERT INTO album (position, name, path) VALUES (?, ?, ?)";
                     $stmt = $conn->prepare($insertSql);
-                    $stmt->bind_param('ss', $position, $imageUrl);
+                    $stmt->bind_param('sss', $position, $imageName, $imageUrl);
 
                     if ($stmt->execute()) {
                         echo json_encode([
@@ -128,7 +129,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
 
         break;
-
+        
     default:
         echo json_encode([
             "status" => "error",

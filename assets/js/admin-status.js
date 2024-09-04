@@ -9,7 +9,7 @@ const displayWishes = (data) => {
 
         htmlContent += `
             <div class="col-12 d-flex align-items-center mb-4 border-bottom pb-3">
-                <div style="width: 60px; height: 22px;">
+                <div class="flex-shrink-0" style="width: 60px; height: 22px;">
                     <input class="wish-status-input" type="checkbox" ${isChecked} data-id="${item.id}">
                 </div>
                 <div class="flex-1">

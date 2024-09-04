@@ -13,10 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt->bind_param("s", $position);
         $stmt->execute();
         $result = $stmt->get_result();
+        $path = [];
     
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $path = $row['path'];
+            while ($row = $result->fetch_assoc()) {
+                $path[] = $row['path'];
+            }
     
             echo json_encode(["status" => "success", "path" => $path]);
         } else {

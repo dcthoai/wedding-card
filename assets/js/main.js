@@ -61,34 +61,38 @@ navbarLinks.forEach(link => {
     });
 });
 
-const getImageByPosition = (position, element) => {
-    fetch(BASE_URL + `/image.php?position=${position}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success')
-            element.src = data.path.replace(/^\.{2}/, ''); // Replace .. in url
-        else
-            element.src = '';
-    })
-    .catch(error => {
-        element.src = '';
-        console.error(error);
-    })
+const getUserInfoAutoFill = () => {
+    const fullname = localStorage.getItem('card-fullname');
+    const email = localStorage.getItem('card-email');
+    const fullnameInputs = document.querySelectorAll('input[name="fullname"]');
+    const emailInputs = document.querySelectorAll('input[name="email"]');
+
+    if (fullname && fullname !== '')
+        fullnameInputs[0].value = fullnameInputs[1].value = fullname;
+    
+    if (email && email !== '')
+        emailInputs[0].value = emailInputs[1].value = email;
+}
+
+const setUserInfoAutoFill = (fullname, email) => {
+    if (fullname && fullname !== '')
+        localStorage.setItem('card-fullname', fullname);
+
+    if (email && email !== '')
+        localStorage.setItem('card-email', email);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    const imageLoadByPositions = document.querySelectorAll('img.image-fetch-by-position');
+    const textInputs = document.querySelectorAll('input[type="text"]');
 
-    imageLoadByPositions.forEach(image => {
-        const position = image.dataset.position;
-
-        getImageByPosition(position, image);
+    textInputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            getUserInfoAutoFill();
+        })
     })
-})
+});
+
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('card-fullname');
+    localStorage.removeItem('card-email');
+});

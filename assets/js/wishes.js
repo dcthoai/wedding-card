@@ -6,18 +6,21 @@ const wishContentBox = document.getElementById('wish-content-list');
 
 const saveWish = async () => {
     try {
+        const wishData = {
+            fullname: fullnameWish.value.trim(),
+            email: emailWish.value.trim(),
+            content: contentWish.value.trim()
+        }
+
         openLoadingAnimation();
+        setUserInfoAutoFill(wishData.fullname, wishData.email);
 
         const response = await fetch(BASE_URL + '/wishes/save.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                fullname: fullnameWish.value.trim(),
-                email: emailWish.value.trim(),
-                content: contentWish.value.trim()
-            })
+            body: JSON.stringify(wishData)
         });
 
         if (!response.ok) {
@@ -39,6 +42,7 @@ const saveWish = async () => {
             }
         }
     } catch (error) {
+        closeLoadingAnimation();
         openPopupNotify('Thất bại', '', 'error');
         console.error("Failed to save your wish. ", error);
     }

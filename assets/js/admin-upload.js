@@ -1,29 +1,8 @@
 
-const getImageByPosition = (position, element) => {
-    fetch(BASE_URL + `/image.php?position=${position}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success')
-            element.src = data.path;
-        else
-            element.src = '';
-    })
-    .catch(error => {
-        element.src = '';
-        console.error(error);
-    })
-}
-
-function uploadImage(image, position, element) {
+function uploadImage(imageName, image, position, element) {
     const formData = new FormData();
 
+    formData.append('imageName', imageName);
     formData.append('image', image);
     formData.append('position', position);
 
@@ -46,14 +25,14 @@ function uploadImage(image, position, element) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+    displayAllImage();
     const uploadImageBoxs = document.querySelectorAll('.img-wrapper');
 
     uploadImageBoxs.forEach(parent => {
         const imageInput = parent.querySelector('input');
         const imageView = parent.querySelector('img');
         const position = parent.dataset.position;
-
-        getImageByPosition(position, imageView);
+        const imageName = parent.dataset.name;
 
         imageInput.addEventListener('change', (event) => {
             const files = event.target.files;
@@ -61,8 +40,8 @@ window.addEventListener('DOMContentLoaded', () => {
             if (files.length > 0) {
                 const file = files[0];
                 
-                uploadImage(file, position, imageView);
+                uploadImage(imageName, file, position, imageView);
             } 
-        })
+        });
     });
-})
+});

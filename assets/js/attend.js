@@ -38,6 +38,7 @@ const saveAttendUser = async () => {
         }
 
         openLoadingAnimation();
+        setUserInfoAutoFill(data.fullname, data.email);
 
         const response = await fetch(BASE_URL + '/attend/save.php', {
             method: 'POST',
@@ -57,13 +58,13 @@ const saveAttendUser = async () => {
             if (result.status === 'success') {
                 fullNameInput.value = '';
                 emailInput.value = '';
-
                 openPopupNotify('Thành công', '', 'success');
             } else {
                 openPopupNotify('Thất bại', '', 'error');
             }
         }
     } catch (error) {
+        closeLoadingAnimation();
         openPopupNotify('Thất bại', '', 'error');
         console.error(error);
     }

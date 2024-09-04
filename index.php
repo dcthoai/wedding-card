@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+    <!-- Background image -->
+    <div class="background"></div>
 
     <!--  Animation loading  -->
     <div class="loading">
@@ -98,8 +100,7 @@
             </div>
 
             <div class="frontground">
-                <img class="image-fetch-by-position" data-position="banner" 
-                    src="./assets/imgs/bg2.jpg" alt="Thu and Cuong">
+                <img data-position="banner" src="" id="banner-image" alt="Thu and Cuong">
                 <h1 class="wedding-title">Wedding</h1>
                 <h5 class="wedding-member">Thu Đàm & Cường Trần</h5>
             </div>
@@ -110,7 +111,6 @@
             <div class="calendar">
                 <div class="header">
                     <h1 class="header_title pb-3">Tháng 09</h1>
-                    <!-- <p class="header_subtitle">2024</p> -->
                 </div>
                 <div class="days-of-week">
                     <div class="day-name"><div>Thứ 2</div></div>
@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <div class="countdown mt-4">
+            <div class="countdown mt-5">
                 <div class="time">
                     <span id="days">00</span>
                     <div class="label">Ngày</div>
@@ -180,27 +180,25 @@
                 </div>
             </div>
 
-            <div class="event pt-5 mt-4" id="event">
+            <div class="event pt-5 mt-5" id="event">
                 <div class="heading">Sự kiện cưới</div>
 
                 <div class="row justify-content-center">
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ hỏi nhà trai</h5>
-                            <img class="image-fetch-by-position" data-position="groom-1" 
-                                src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="event-image" data-position="groom-1" src="" alt="img">
             
-                            <p class="date">10H 04/09/2024</p>
-                            <p class="place">Tư gia, làng Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
+                            <p class="date">08H 04/09/2024</p>
+                            <p class="place">Tư gia, thôn Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
                         </div>
                     </div>
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ hỏi nhà gái</h5>
-                            <img class="image-fetch-by-position" data-position="bride-1" 
-                                src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="event-image" data-position="bride-1" src="" alt="img">
 
-                            <p class="date">8H 04/09/2024</p>
+                            <p class="date">10H 04/09/2024</p>
                             <p class="place">Tư gia, thôn Đoan Xuyên, xã Ứng Hoè, huyện Ninh Giang, Hải Dương</p>
                         </div>
                     </div>
@@ -210,18 +208,16 @@
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ cưới nhà trai</h5>
-                            <img class="image-fetch-by-position" data-position="groom-2" 
-                                src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="event-image" data-position="groom-2" src="" alt="img">
             
                             <p class="date">10H 08/09/2024</p>
-                            <p class="place">Tư gia, làng Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
+                            <p class="place">Tư gia, thôn Mão Xuyên, xã Nguyễn Trãi, huyện Ân Thi, Hưng Yên</p>
                         </div>
                     </div>
                     <div class="event-item col-12 col-sm-6">
                         <div class="pb-3">
                             <h5 class="w-100 text-center text-uppercase title">Lễ cưới nhà gái</h5>
-                            <img class="image-fetch-by-position" data-position="bride-2" 
-                                src="./assets/imgs/bg2.jpg" alt="img">
+                            <img class="event-image" data-position="bride-2" src="" alt="img">
 
                             <p class="date">17h 07/09/2024</p>
                             <p class="place">Tư gia, thôn Đoan Xuyên, xã Ứng Hoè, huyện Ninh Giang, Hải Dương</p>
@@ -230,34 +226,71 @@
                 </div>
             </div>
 
-            <div class="album pt-5 mt-md-5" id="album">
-                <div class="album-head pt-md-5">
+            <div class="album pt-5" id="album">
+                <div class="album-head pt-5">
                     <div class="row">
-                        <div class="col-12 col-md-3"><h4>Xem ảnh cùng chúng tớ nào</h4></div>
-                        <div class="col-12 col-md-9">
-                            <img class="image-fetch-by-position" data-position="album-top" 
-                                src="./assets/imgs/bg2.jpg" alt="img">
+                        <div class="col-3 pe-0 pe-md-3 mb-1 mb-sm-2"><h4>Xem ảnh cùng chúng tớ nào</h4></div>
+                        <div class="col-9">
+                            <img data-position="album-top" class="rounded-0" src="" id="album-top-image" alt="img">
                         </div>
                     </div>
                 </div>
 
-                <div class="album-item">
-                    <div class="row justify-content-center">
-                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4">
-                            <img src="" class="image-fetch-by-position" data-position="album-col-1" alt="img">
+                <div class="album-item mt-5">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-4 pe-1 pe-sm-2 pb-4 pb-md-5">
+                            <img style="aspect-ratio: 6/11;" class="album-col-image w-100 h-100" src="" alt="img">
                         </div>
-                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 mt-md-5">
-                            <img src="" class="image-fetch-by-position" data-position="album-col-2" alt="img">
+                        <div class="col-4 px-sm-1 pt-4 pt-md-5" style="padding-left: 2px; padding-right: 2px;">
+                            <img style="aspect-ratio: 6/11;" class="album-col-image w-100 h-100" src="" alt="img">
                         </div>
-                        <div style="padding: 0 20px;" class="col-12 col-sm-6 col-md-4 mt-4 mt-md-0">
-                            <img src="" class="image-fetch-by-position" data-position="album-col-3" alt="img">
+                        <div class="col-4 ps-1 ps-sm-2 pb-4 pb-md-5">
+                            <img style="aspect-ratio: 6/11;" class="album-col-image w-100 h-100" src="" alt="img">
                         </div>
                     </div>
                 </div>
-                <div class="album-item"></div>
+
+                <div class="album-item mt-5">
+                    <div class="row justify-content-center flex-colum align-items-center">
+                        <div class="col-6 pe-1 pe-sm-2">
+                            <img class="album-uneven-image my-1 my-sm-2" src="" alt="img">
+                            <img class="album-uneven-image my-1 my-sm-2" src="" alt="img">
+                        </div>
+                        <div class="col-6 ps-1 ps-sm-2">
+                            <img class="album-uneven-image my-1 my-sm-2" src="" alt="img">
+                            <img class="album-uneven-image my-1 my-sm-2" src="" alt="img">
+                            <img class="album-uneven-image my-1 my-sm-2" src="" alt="img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="album-item mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="" class="rounded-0" style="aspect-ratio: 3/4;" id="album-center-image" alt="img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="album-item my-5">
+                    <div class="row">
+                        <div class="col-6 pe-1 pe-sm-2">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                        </div>
+                        <div class="col-6 ps-1 ps-sm-2">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                            <img src="" class="album-grid-image py-1 py-sm-2 rounded-0" alt="img">
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="celebration-box py-5" id="gift">
+            <div class="celebration-box pt-5" id="gift">
                 <div class="heading">Hộp mừng cưới</div>
 
                 <div class="row">
@@ -285,7 +318,7 @@
             </div>
 
             <div class="wish-box py-5" id="wish">
-                <h3 class="wish-box__title">Gửi lời chúc đến chúng tớ nhé!</h3>
+                <h3 class="wish-box__title pt-5">Gửi lời chúc đến chúng tớ nhé!</h3>
 
                 <div class="wrapper pb-5">
                     <div class="background"></div>
@@ -297,7 +330,7 @@
                             <input type="text" name="email" placeholder="Nhập email" id="email-wish">
                         </div>
 
-                        <div class="col-12 mt-4">
+                        <div class="col-12 mt-3">
                             <textarea class="w-100" rows="6" name="content" placeholder="Nhập lới chúc của bạn *" id="content-wish"></textarea>
                         </div>
 
@@ -321,7 +354,7 @@
                         <input type="text" name="email" placeholder="Nhập email" id="email-attend">
                     </div>
 
-                    <div class="col-12 mt-4">
+                    <div class="col-12 mt-3">
                         <div class="event-box">
                             <h5 class="heading">Sự kiện sẽ tham dự</h5>
 
@@ -368,18 +401,12 @@
                 <p class="content">Thương.</p>
             </div>
 
-            <h5 class="owner pe-4">
+            <h5 class="owner pe-4 pb-5 mb-5">
                 <span class="d-inline">Thu & Cuong</span>
                 <img src="./assets/imgs/heart.png" alt="Heart icon">
             </h5>
         </footer>
     </div>
-
-    <!-- PHP -->
-    <?php ?>
-    <!-- End PHP -->
-
-    <div class="copyright mt-5 pt-5">Created by <a href="https://www.facebook.com/cth.169">dcthoai</a></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" 
@@ -393,5 +420,6 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/wishes.js"></script>
     <script src="./assets/js/attend.js"></script>
+    <script src="./assets/js/image.js"></script>
 </body>
 </html>
